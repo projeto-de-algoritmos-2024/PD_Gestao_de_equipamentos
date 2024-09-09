@@ -1,0 +1,312 @@
+<html>
+  <head>
+    <title>GESTÃO DE EQUIPAMENTOS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- data tables -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+    <script
+      src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script
+      src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+
+    <!-- Select2 -->
+    <link
+      rel="stylesheet"
+      href="../../backend/vendor/select2/dist/css/select2.min.css" />
+
+    <!-- button plus -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- swall -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <!-- Algoritmo -->
+    <script
+      src="./index.js"></script>
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="card card-primary">
+      <div
+        class="card-header"
+        style="
+          text-align: center;
+          font-size: 18px;
+          background-color: #32383e;
+          color: white;
+          padding: 10px 10px 10px 10px;
+        ">
+        GESTÃO DE EQUIPAMENTOS
+      </div>
+    </div>
+
+    <br />
+
+    <div class="container">
+
+      <div class="card">
+        <div class="card-header text-white" style="background-color:#32383E;">
+          <h5>INCLUSAO</h5>
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label" for="tipo"><span
+                style="color: red">*</span> TIPO:</label>
+            <div class="input-group col-sm-9">
+              <select class="form-control"
+                id="tipo">
+                <option value>Selecione</option>
+                <option value="ARMA BRANCA">ARMA BRANCA</option>
+                <option value="PISTOLA">PISTOLA</option>
+                <option value="FUZIL">FUZIL</option>
+                <option value="SNIPER">SNIPER</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label" for="dano"><span
+                style="color: red">*</span> DANO:</label>
+            <div class="input-group col-sm-9">
+              <input
+                type="number"
+                class="form-control"
+                id="dano"
+                placeholder="Insira o valor de dano..." />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label" for="peso"><span
+                style="color: red">*</span> PESO:</label>
+            <div class="input-group col-sm-9">
+              <input
+                type="number"
+                class="form-control"
+                id="peso"
+                placeholder="Insira o valor do peso do equipamento..." />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label" for="nome"><span
+                style="color: red">*</span> NOME:</label>
+            <div class="input-group col-sm-9">
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                placeholder="Insira o nome..." />
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-around;">
+            <button class="btn btn-success btn-block" id="button_inclusao"
+              onclick="verifica_equipamento()">ADICIONAR</button>
+          </div>
+
+        </div>
+      </div>
+
+      <br />
+
+      <div class="card">
+        <div class="card-header text-white" style="background-color:#32383E;">
+          <h5>EQUIPAMENTOS</h5>
+        </div>
+        <div class="card-body">
+          <table style="width: 100%;"
+            class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col"
+                  style="text-align: center; vertical-align: middle">Tipo</th>
+                <th scope="col"
+                  style="text-align: center; vertical-align: middle">Nome</th>
+                <th scope="col"
+                  style="text-align: center; vertical-align: middle">Peso</th>
+                <th scope="col"
+                  style="text-align: center; vertical-align: middle">Dano</th>
+                <th scope="col"
+                  style="text-align: center; vertical-align: middle">Ação</th>
+              </tr>
+            </thead>
+
+            <tbody id="equipamentosBody">
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div class="card">
+        <div class="card-header text-white" style="background-color:#32383E;">
+          <h5>SOLUÇÃO</h5>
+        </div>
+        <div class="card-body">
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label" for="capacidade"><span
+                style="color: red">*</span> CAPACIDADE:</label>
+            <div class="input-group col-sm-9">
+              <input
+                type="number"
+                class="form-control"
+                id="capacidade"
+                placeholder="Insira o valor de capacidade de carga..." />
+            </div>
+          </div>
+
+          <br>
+
+          <button id="calcularMaiorValor"
+            class="btn btn-primary btn-block">CALCULAR MAIOR VALOR</button>
+          <p id="maiorValor"></p>
+
+        </div>
+
+      </div>
+    </body>
+
+    <script>
+    let equipamentos = [];
+
+    function verifica_equipamento() {
+      var tipo = $("#tipo").val();
+      var nome = $("#nome").val();
+      var dano = $("#dano").val();
+      var peso = $("#peso").val();
+
+      var title = "INCLUSÃO DE EQUIPAMENTO";
+      var text = "<span style='font-weight: bold;''>Atenção:</span> Todos os campos devem ser preenchidos.";
+      var type = "warning";
+      var acao = "exibir";
+
+      if (tipo == "" || nome == "" || dano == "" || peso == "") {
+        exibe_mensagem(title, text, type, acao);
+      } else {
+        adiciona_equipamento();
+      }
+
+    }
+
+    function adiciona_equipamento() {
+      var tipo = $("#tipo").val();
+      var nome = $("#nome").val();
+      var dano = parseInt($("#dano").val());
+      var peso = parseInt($("#peso").val());
+
+      equipamentos.push({ tipo: tipo, nome: nome, dano: dano, peso: peso});
+
+      $("#equipamentosBody").append(`<tr id='${nome}'>
+        <td scope="col" style="text-align: center; vertical-align: middle">${tipo}</td>
+        <td scope="col" style="text-align: center; vertical-align: middle">${nome}</td>
+        <td scope="col" style="text-align: center; vertical-align: middle">${peso}</td>
+        <td scope="col" style="text-align: center; vertical-align: middle">${dano}</td>
+        <td scope="col" style="text-align: center; vertical-align: middle">
+          <button type="button" class="btn btn-danger btn-circle remove-btn" data-nome="${nome}" title="Remover equipamento" style="margin-bottom: 10px; border-color: #dae0e5;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+</svg>
+                                        </button></td>
+      </tr>`);
+
+      $(".remove-btn").on("click", function() {
+          var nomeEquipamento = $(this).data("nome");
+          remove_equipamento(nomeEquipamento);
+      });
+
+      $("#tipo").val('');
+      $("#nome").val('');
+      $("#dano").val('');
+      $("#peso").val('');
+    }
+
+    function remove_equipamento(nome) {
+      // Remove o elemento da tabela
+      $(`#${nome}`).remove();
+
+      // Remove o elemento da variável equipamentos. criando outro array
+      equipamentos = equipamentos.filter(function(equipamento) {
+          return equipamento.nome !== nome;
+      });
+    }
+
+    $("#calcularMaiorValor").click(function() {
+      const capacidade = $("#capacidade").val();
+
+      if (capacidade == "") {
+        var title = "EQUIPAMENTO";
+        var text = "<span style='font-weight: bold;''>Atenção:</span> O campo de capacidade deve ser preenchido.";
+        var type = "warning";
+        var acao = "exibir";
+      } else {
+        let num = 1
+        const itens = equipamentos.map(equipamento => num++);
+        const valores = equipamentos.map(equipamento => equipamento.dano);
+        const pesos = equipamentos.map(equipamento => equipamento.peso);
+        const n = itens.length;
+
+        const result = knapsackRecursive(capacidade, pesos, valores, n);
+        const maxValue = result.maxValue;
+        const selectedItems = result.selectedItems.map(index => itens[index]);
+
+        var title = "EQUIPAMENTO";
+        var text = "O valor máximo que pode ser colocado na mochila é: " + maxValue + "</br>. Itens selecionados: " + selectedItems;
+        var type = "success";
+        var acao = "exibir";
+      }
+      
+      exibe_mensagem(title, text, type, acao);
+
+      // $("#maiorValor").text(`Maior valor que pode ser colocado na mochila é: ${maxValue}`);
+      
+      // const selectedItems = result.selectedItems.map(index => itens[index]);
+
+      // console.log("O valor máximo que pode ser colocado na mochila é: " + maxValue);
+      // console.log("Itens selecionados: " + selectedItems);
+    });
+
+    function exibe_mensagem(title, text, type, acao) {
+      swal(
+        {
+          title: title,
+          text: text,
+          type: type,
+          showCancelButton: false,
+          confirmButtonText: "Ok",
+          closeOnConfirm: false,
+          html: true,
+        },
+        function (result) {
+          if (result) {
+            swal.close();
+          }
+        }
+      );
+    }
+
+</script>
+  </html>
