@@ -1,7 +1,7 @@
 # PD_Gestao_de_projetos
 
 **Número da Lista**: 3<br>
-**Conteúdo da Disciplina**: Dividir e Conquistar<br>
+**Conteúdo da Disciplina**: Programação Dinâmica<br>
 
 ## Aluno
 | Matrícula | Aluno          |
@@ -9,10 +9,11 @@
 | 19/0134224| Artur Reiman   |
 
 ## Sobre 
-Este projeto de "Pesquisa de Mercado" tem como objetivo principal desenvolver uma aplicação que permita visualizar a mediana das idades e a renda dos possíveis clientes de uma empresa, utilizando o algoritmo dividir e conquistar das Medianas da Medianas.
+Este projeto de "Gestão de Equipamentos", inspirada em aplicações para jogos de video game, tem como objetivo principal desenvolver uma aplicação que permita visualizar o melhor conjunto de armas a serem armazenadas numa mochila, contando com seu peso e valor de dano.
 
 ## Exemplos de entrada e saída
-![Exemplo 1](./assets/exemplo1.png)
+![Tabela](./assets/pd-img-1.png)
+![Resultado](./assets/pd-img-2.png)
 
 ## Tecnologias 
 - HTML: para o desenvolvimento do frontend da aplicação.
@@ -25,5 +26,5 @@ Para realizar o uso do projeto basta exercer o dowload e a execução do index.h
 
 A fim de facilitar o entendimento completo do nosso projeto foi realizado uma gravação de uso, sendo apresentado no link abaixo:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YFJtADeJ6Oo?si=y3L0sdLHT8R3SlC2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j2naOSKgt-w?si=5t4SBBta76mNTib5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

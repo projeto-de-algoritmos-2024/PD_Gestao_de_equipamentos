@@ -20,17 +20,3 @@ function knapsackRecursive(capacity, weights, values, n) {
         }
     }
 }
-
-// Exemplo de uso
-// const itens = [1, 2, 3, 4, 5];
-// const values = [1, 6, 18, 22, 26];
-// const weights = [1, 2, 5, 6, 7];
-// const capacity = 11;
-// const n = values.length;
-
-// const result = knapsackRecursive(capacity, weights, values, n);
-// const maxValue = result.maxValue;
-// const selectedItems = result.selectedItems.map(index => itens[index]);
-
-// console.log("O valor máximo que pode ser colocado na mochila é: " + maxValue);
-// console.log("Itens selecionados: " + selectedItems);
